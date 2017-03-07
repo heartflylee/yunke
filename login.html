@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/login.css" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/icheck.js"></script>
+		<script src="http://static.geetest.com/static/tools/gt.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/login.js" ></script>
+		<!--[if lt IE 10]>
+	    <script type="text/javascript" src="js/html5shiv.js"></script>
+	    <script type="text/javascript" src="js/respond.min.js"></script>
+	    <script type="text/javascript" src="js/placeholder.js" ></script>
+	    <![endif]-->
+	</head>
+
+	<body class="login-warp">
+		<div class="signIn-warp">
+			<div class="s-logo"></div>
+			<div class="s-main">
+				<div class="login-box">
+					<form onsubmit="return login();">
+						<div class="input-box">
+							<input type="text" class="input l-phone" placeholder="请输入手机号" /></div>
+						<div class="input-box">
+							<input type="password" class="input l-pwd" placeholder="请输入密码" />
+						</div>
+						<div class="input-box">
+							<input type="submit" class="input l-submit" value="登 录" onclick="return login();" />
+						</div>
+					</form>
+				</div>
+				<div class="l-bottom">
+					<div class="right">
+						<a class="a-btn" href="javascript:layerShow('#signUp');">注册</a>
+						<a class="a-btn" href="javascript:void(0);">忘记密码</a>
+						<div class="l-download">
+							<label>下载云客APP</label>
+							<div class="icon">
+								<i class="android"></i>
+								<div class="code-warp">
+									<div class="code"></div>
+								</div>
+							</div>
+							<div class="icon">
+								<i class="ios"></i>
+								<div class="code-warp">
+									<div class="code"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layer-warp" id="signUp">
+			<div class="signUp-warp">
+				<div class="signUp-close" onclick="signClose()">
+					<i class="close"></i>
+				</div>
+				<div class="signUp-main">
+					<div class="s-title">
+						欢迎注册云客企业版
+					</div>
+					<div class="s-box">
+						<form id="f-signUp" onsubmit="return signUp();">
+							<div class="s-input-box">
+								<input type="text" class="input" placeholder="请输入手机号" />
+							</div>
+							<div class="s-input-box">
+								<div class="box-captcha" id="popup-submit">
+									<img src="img/geetest.png" />
+								</div>
+							</div>
+							<div class="s-input-box">
+								<input type="text" class="input yzm-input" placeholder="请输入验证码" />
+								<a class="btn yzm-btn" href="javascript:yzmbtn();">获取验证码</a>
+							</div>
+							<div class="s-input-box">
+								<input type="password" class="input" placeholder="请输入密码" />
+							</div>
+							<div class="s-input-box">
+								<input type="password" class="input" placeholder="请再次输入密码" />
+							</div>
+							<div class="s-input-box">
+								<input type="checkbox" class="checkbox" checked="checked" id="agree" />
+								<label for="agree"><i></i>同意《<a class="href" href="javascript:layerShow('#statement');">云客法律声明及隐私权保护协议</a>》</label>
+							</div>
+							<div class="s-input-box">
+								<input type="submit" class="btn signUp-submit" value="下一步" />
+							</div>
+						</form>
+					</div>
+
+					<!--<div class="s-second-box">
+						<form id="f-company" onsubmit="return company();">
+							<div class="s-input-box">
+								<input type="text" class="l-input company-input" placeholder="请输入公司名称" />
+								<div class="company-warp">
+									<div class="company-li"><label>北京联云</label>天下科技有公司</div>
+									<div class="company-li"><label>北京联云</label>天上发展有限公司</div>
+									<div class="company-li">中国<label>北京联云</label>天上发展有限公司</div>
+									<div class="company-li">东北<label>北京联云</label>天上发展有限公司</div>
+									<div class="company-li">公司名称1</div>
+								</div>
+								<div class="qixinbao"><label class="qixin-first"><i></i>工商信息</label>
+									<a href="javascript:layerShow('#business');" class="qixin-second"><i></i>工商信息</a>
+								</div>
+							</div>
+							<div class="s-input-box">
+								<input type="submit" class="btn signUp-submit" value="完成注册" />
+							</div>
+						</form>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		
+		<div class="layer-warp" id="company">
+			<div class="signUp-warp">
+				<div class="signUp-close" onclick="companyClose()">
+					<i class="close"></i>
+				</div>
+				<div class="signUp-main">
+					<div class="s-title">
+						欢迎注册云客企业版
+					</div>
+					<!--<div class="s-first-box">
+						<form id="f-signUp" onsubmit="return signUp();">
+							<div class="s-input-box">
+								<input type="text" class="l-input" placeholder="请输入手机号" />
+							</div>
+							<div class="s-input-box">
+								<div class="box-captcha" id="popup-submit">
+									<img src="img/geetest.png" />
+								</div>
+							</div>
+							<div class="s-input-box">
+								<input type="text" class="l-input yzm-input" placeholder="请输入验证码" />
+								<a class="btn yzm-btn" href="javascript:yzmbtn();">获取验证码</a>
+							</div>
+							<div class="s-input-box">
+								<input type="password" class="l-input" placeholder="请输入密码" />
+							</div>
+							<div class="s-input-box">
+								<input type="password" class="l-input" placeholder="请再次输入密码" />
+							</div>
+							<div class="s-input-box">
+								<input type="checkbox" class="checkbox" checked="checked" id="agree" />
+								<label for="agree"><i></i>同意《<a class="href" href="javascript:layerShow('#statement');">云客法律声明及隐私权保护协议</a>》</label>
+							</div>
+							<div class="s-input-box">
+								<input type="submit" class="btn signUp-submit" value="下一步" />
+							</div>
+						</form>
+					</div>-->
+
+					<div class="s-box">
+						<form id="f-company" onsubmit="return company();">
+							<div class="s-input-box">
+								<input type="text" class="input company-input" placeholder="请输入公司名称" />
+								<div class="company-warp">
+									<div class="company-li"><label>北京联云</label>天下科技有公司</div>
+									<div class="company-li"><label>北京联云</label>天上发展有限公司</div>
+									<div class="company-li">中国<label>北京联云</label>天上发展有限公司</div>
+									<div class="company-li">东北<label>北京联云</label>天上发展有限公司</div>
+									<div class="company-li">公司名称1</div>
+								</div>
+								<div class="qixinbao"><label class="qixin-first"><i></i>工商信息</label>
+									<a href="javascript:layerShow('#business');" class="qixin-second"><i></i>工商信息</a>
+								</div>
+							</div>
+							<div class="s-input-box">
+								<input type="submit" class="btn signUp-submit" value="完成注册" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="layer-warp" id="business">
+			<div class="layer-main">
+				<div class="layer-head">
+					工商信息
+					<div class="layer-close" onclick="layerClose('#business')">
+						<i></i>
+					</div>
+				</div>
+				<div class="layer-info">
+					<div class="message">
+						<div class="m-row">
+							<div class="m-name">
+								公司名称
+							</div>
+							<div class="m-info">
+								北京铁路局北京铁路局
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								公司类型
+							</div>
+							<div class="m-info">
+								全民所有制
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								行业
+							</div>
+							<div class="m-info">
+								铁路运输业
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								法定代表人
+							</div>
+							<div class="m-info">
+								刘树蓂
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								注册资金
+							</div>
+							<div class="m-info">
+								1954073万人民币
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								经营范围
+							</div>
+							<div class="m-info">
+								铁路客货运输；装卸、仓储；铁路运输设备、设施、配件的制造、安装、维修；建设项目发包；工程勘测、设计、施工的组织协调与管理；原材料、燃料、配件的采购、供应、销售、仓储；生活服务设施的经营与管理（国家有专项规定的除外）。
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								注册地址
+							</div>
+							<div class="m-info">
+								北京市东城区老钱胡同16号
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								办公地址
+							</div>
+							<div class="m-info">
+								北京市东城区老钱局胡同16号
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								电话
+							</div>
+							<div class="m-info">
+								暂无信息
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-footer">
+					<div class="right">
+						<a href="javascript:layerClose('#business');" class="layer-close-btn">关闭</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layer-warp" id="statement">
+			<div class="layer-main">
+				<div class="layer-head">
+					云客法律声明及隐私权保护协议
+					<div class="layer-close" onclick="layerClose('#statement')">
+						<i></i>
+					</div>
+				</div>
+				<div class="layer-info">
+					<div class="statement">
+						<div class="h1">一．产品使用</div>
+						<div class="p">未经云客允许，云客内的任何信息及其任何组成部分不得被重新编辑、复制、仿制、抄袭等用于任何商业活动。如果本公司确认用户行为违法或有损本公司的合法利益，则本公司保留包括但不限于拒绝提供服务、冻结或删除会员帐户、采取相关法律措施的权利。</div>
+						<br>
+						<div class="h1">二．隐私权保护</div>
+						<div class="p">在云客请求用户提供有关个人信息之前，云客会解释这些信息的用途。本公司在合法且经用户同意的前提下，以公平、合法的方式收集必要的用户真实个人资料。</div>
+						<div class="p">本公司有权为安全目的使用您提供的个人资料，诸如监控用户的使用及安全，实施内部控制，以及制备统计数字、进行风险调控。</div>
+						<div class="p">云客将采取合理的安全手段保护用户提供的个人资料，在未得到用户许可之前，不会将用户的任何个人信息提供给任何无关的第三方。</div>
+						<br>
+						<div class="h1">三．信息来源及使用</div>
+						<div class="p">云客中的信息和内容均来源于公开的各大互联网数据平台及用户的授权提供，所有信息都是公开合法且来源可溯，不包括任何个人或企业未公开的私人信息。云客所提供的信息仅供用户参考，不保证信息的准确性、有效性、及时性或完整性，云客不通过数据谋取任何利润。</div>
+						<div class="p">对所有使用云客信息的用户，云客享有监督权。对任何利用云客内部数据从事非法交易，包括但不限于诈骗、骚扰、买卖等形式，一经发现云客有权利立即调查、冻结或删除会员账户，并主动提交公安机关，积极配合公安机关调查。</div>
+						<br>
+						<div class="h1">四．免责声明</div>
+						<div class="p">在法律允许的范围内，本公司不承担用户或任何人士就使用或未能使用云客所提供的信息所引致的任何直接、间接、附带、从属、特殊、惩罚性的损害赔偿（包括但不限于收益、预期利润的损失或失去的业务、未实现预期的节减）。</div>
+						<br>
+						<div class="p">在法律许可的最大限度内，本公司声明不作出任何明示或暗示的陈述和保证，包括但不限于有关安全性、准确性、完整性、适销性、无侵权的保证。用户应为使用云客承担全部责任和风险。</div>
+					</div>
+				</div>
+				<div class="layer-footer">
+					<div class="right">
+						<a href="javascript:layerClose('#statement');" class="layer-close-btn">关闭</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

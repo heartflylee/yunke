@@ -1,0 +1,397 @@
+
+.jqx-rc-all {
+    border-radius: 3px;
+}
+
+.jqx-calendar {
+    border: 1px solid transparent;
+    overflow: hidden;
+    cursor: default;
+}
+.jqx-calendar td {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-spacing: 1px;
+}
+.jqx-calendar table {
+    line-height: 2;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+.jqx-calendar-row-header {
+    outline: none;
+    border: 0 solid #d4d4d4;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+}
+.jqx-calendar-column-header {
+    outline: none;
+    text-align: right;
+    padding: 3px;
+    //  border-top: none;
+    //  border-bottom: 1px solid transparent;
+    //  border-left: none;
+    //  border-right: none;
+    margin: 0;
+    cursor: default;
+}
+/*applied to the calendar's top-left header. This header is displayed before the day names and above the week numbers.*/
+.jqx-calendar-top-left-header {
+    outline: none;
+    border: 0 solid #f2f2f2;
+    margin: 0;
+    cursor: default;
+}
+/*applied to the calendar's navigation buttons.*/
+.jqx-calendar-title-navigation {
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 25px;
+    height: 30px;
+}
+/*applied to the month table*/
+.jqx-calendar-month {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+}
+/*applied to the calendar's title content.*/
+.jqx-calendar-title-content {
+    float: left;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+/*applied to the calendar's navigation title.*/
+.jqx-calendar-title-header {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 0;
+}
+.jqx-calendar-title-header td {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    text-align: center;
+}
+/*applied to the calendar's navigation title when the calendar is disabled.*/
+.jqx-calendar-title-header-disabled {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 0;
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 0 solid transparent;
+
+}
+/*applied to a calendar cell.*/
+.jqx-calendar-cell {
+    border: 1px solid transparent;
+    margin: 0;
+    outline: none;
+    text-align: center;
+    padding: 1px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.jqx-calendar-cell td {
+    padding: 0;
+    margin: 0;
+}
+/*applied to a calendar cell in decade and year views.*/
+.jqx-calendar-cell-decade,
+.jqx-calendar-cell-year {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.jqx-calendar .jqx-fill-state-normal {
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+/*applied to a calendar cell when the cell is hidden. A cell can be hidden when the showOtherMonthDays property is false and the calendar hides the cells with dates from the other months*/
+.jqx-calendar-cell-hidden {
+    margin: 0;
+    visibility: hidden;
+    cursor: default;
+}
+/*applied to a calendar cell when the cell's date is a weekend date.*/
+.jqx-calendar-cell-weekend {
+    color: #898989 !important;
+    margin: 0;
+    cursor: pointer;
+}
+/*applied to a calendar cell when the cell's date is a special date(holiday, vacation, birthay. See the SpecialDates demo).*/
+.jqx-calendar-cell-specialDate {
+    color: #FF0000 !important;
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin: 0;
+    cursor: pointer;
+}
+/*applied to a calendar cell when the cell's date is a restricted date.*/
+.jqx-calendar-cell-restrictedDate {
+    background-color: rgba(251, 132, 153, 1);
+    border: 1px solid #fff;
+    margin: 0;
+    cursor: pointer;
+}
+.jqx-calendar-cell-selected-invalid {
+    color: #FFF !important;
+    background: #FF0000 !important;
+    border: 1px solid #FF0000 !important;
+}
+/*applied to a calendar cell when the cell's date is the today date.*/
+.jqx-calendar-cell-today {
+    color: #ff9900;
+    //  background-color: #ffffdb;
+    //  border: 1px solid #fdc066;
+    margin: 0;
+    cursor: pointer;
+}
+/*applied to a calendar cell when the cell is hovered.*/
+.jqx-calendar-cell-hover {
+    margin: 0;
+    cursor: pointer;
+}
+/*applied to a calendar cell when the cell is selected.*/
+.jqx-calendar-cell-selected {
+    margin: 0;
+    cursor: pointer;
+}
+/*applied to a calendar cell when the cell's date represents a date from the previous or next month.*/
+.jqx-calendar-cell-othermonth {
+    color: #898989;
+    margin: 0;
+    cursor: pointer;
+}
+/*applied to a calendar cell when the calendar is disabled.*/
+.jqx-calendar-cell-disabled {
+    color: #ccc;
+}
+/*applied to a calendar cell when the cell is from the row header that displays the week numbers.*/
+.jqx-calendar-row-cell {
+    //  outline: none;
+    //  text-align: center;
+    //  border: 1px solid transparent;
+    //  margin: 0;
+    //  cursor: default;
+}
+/*applied to a calendar cell when the cell is from the row header that displays the week numbers and the calendar is disabled.*/
+.jqx-calendar-row-cell-disabled {}
+.jqx-calendar-footer {
+    //  margin: 5px;
+    //  color: inherit;
+    //  font-size: 13px;
+}
+
+.jqx-calendar-title-container {
+    overflow: hidden;
+}
+/*applied to a calendar cell when the cell is from the column header that displays the day names.*/
+.jqx-calendar-column-cell {
+    overflow: hidden;
+    text-align: center;
+    outline: none;
+    font-weight: normal;
+    //  padding: 1px;
+    //  border: 1px solid transparent;
+    //  margin: 0;
+    cursor: default;
+}
+/*applied to a calendar cell when the cell is from the column header that displays the day names and the calendar is disabled.*/
+.jqx-calendar-column-cell-disabled {}
+/*applied to the calendar's cell area element.*/
+.jqx-calendar-view {
+    //  -webkit-appearance: none;
+    //  outline: none;
+    //  padding: 0;
+    //  border: 0 solid #fff;
+    //  margin: 0;
+    //  cursor: default;
+}
+
+.jqx-widget {
+    //  -moz-box-sizing: content-box;
+    //  box-sizing: content-box;
+    //  -ms-touch-action: none;
+    //  zoom: 1 !important;
+    color: #3d5266;
+    //  -moz-background-clip: padding;
+    //  background-clip: padding-box;
+    //  -webkit-text-size-adjust: none;
+    //  -ms-text-size-adjust: none;
+    //  -webkit-appearance: none;
+    //  -webkit-background-clip: padding-box;
+    //  direction: ltr !important;
+    //  -webkit-tap-highlight-color: rgba(0,0,0,0);
+    //  font-family: Verdana,Arial,sans-serif;
+    //  font-style: normal;
+    //  font-size: 13px;
+}
+
+.jqx-widget-content {
+
+    border-color: #d4d4d4;
+    background: #fff;
+}
+.jqx-widget-header {
+    //  -moz-box-sizing: content-box;
+    //  box-sizing: content-box;
+    //  -ms-touch-action: none;
+    //  -moz-background-clip: padding;
+    //  -webkit-text-size-adjust: none;
+    //  background-clip: padding-box;
+    //  -webkit-background-clip: padding-box;
+    //  -webkit-tap-highlight-color: rgba(0,0,0,0);
+    color: #fff;
+    border-color: #c5c5c5;
+    background: #50d2c2;
+}
+
+.jqx-icon-arrow-left,
+.jqx-icon-arrow-left-hover,
+.jqx-icon-arrow-left-selected {
+    //  background-image: url('images/icon-left.png');
+    background-image: url("../img/time-left.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.jqx-icon-arrow-right,
+.jqx-icon-arrow-right-hover,
+.jqx-icon-arrow-right-selected {
+    //  background-image: url('images/icon-right.png');
+    background-image: url("../img/time-right.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.jqx-fill-state-normal {
+    //  -moz-box-sizing: content-box;
+    //  box-sizing: content-box;
+    //  -ms-touch-action: none;
+    //  font-family: Verdana,Arial,sans-serif;
+    //  font-style: normal;
+    //  font-size: 13px;
+    color: #fff;
+    border-color: #aaa;
+    background: #50d2c2;
+}
+.jqx-fill-state-hover {
+    //  -moz-box-sizing: content-box;
+    //  box-sizing: content-box;
+    //  border-color: #999;
+    //  background: #e8e8e8;
+    color: #fff;
+    border-color: #aaa;
+    background: #50d2c2;
+}
+.jqx-fill-state-pressed {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    color: #fff;
+    border-color: #999;
+    background: #50d2c2;
+}
+.jqx-fill-state-focus {
+    border-color: #555;
+}
+.jqx-fill-state-disabled {
+    cursor: default;
+    color: #000;
+    opacity: 0.55;
+    filter:Alpha(Opacity=45);
+}
+.jqx-fill-state-disabled td,
+.jqx-fill-state-focus td,
+.jqx-fill-state-hover td,
+.jqx-fill-state-normal td,
+.jqx-fill-state-pressed td,
+.jqx-widget td,
+.jqx-widget-content td,
+.jqx-widget-header td {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+//jqxCheck
+
+.jqx-checkbox-default {
+    text-align: left;
+    float: left;
+    padding: 0;
+    border: 1px solid #d4d4d4;
+    outline: none;
+    margin: 0 3px;
+    background: #fff;
+}
+
+.jqx-checkbox-hover {
+    cursor: pointer;
+    float: left;
+    padding: 0;
+    border: 1px solid #d4d4d4;
+    outline: none;
+    margin: 0 3px;
+    background: #fff;
+}
+.jqx-checkbox-check-checked {
+    float: left;
+    background: transparent url("../img/table-check.png") center center no-repeat;
+    padding: 0;
+    border: none;
+    outline: none;
+    margin: 0;
+}
+.jqx-checkbox-check-indeterminate {
+    float: left;
+    background: transparent url("../img/table-check-indeterminate.png") center center no-repeat;
+    padding: 0;
+    border: none;
+    outline: none;
+    margin: 0;
+}
+
+//jqx grid
+.jqx-grid-column-header,
+.jqx-grid-columngroup-header {
+    padding: 0;
+    margin: 0;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: transparent;
+    white-space: nowrap;
+    border-style: solid;
+    font-weight: normal;
+    overflow: hidden;
+    text-align: left;
+    background: #eefaf9;
+    color: #383838;
+}
+.jqx-grid-cell {
+    border-style: solid;
+    //  border-width: 0px 1px 1px 0px;
+    border: none;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    border-color: transparent;
+    background: #fff;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: inherit;
+    overflow: hidden;
+    position: absolute !important;
+    height: 100%;
+}
+.jqx-grid-cell-pinned:last-child {
+    border-right: 1px solid #d4d4d4;
+}

@@ -1,0 +1,248 @@
+
+/*主要内容*/
+.b-main {
+    margin-left: $aside-w;
+    .narrow & {
+        margin-left: $aside-s-w;
+    }
+}
+.b-panel {
+    padding: $header-h $main-right 20px;
+}
+
+.small-nav-warp {
+    position: relative;
+//  overflow: hidden;
+}
+.nav-box {
+    padding: 10px 0;
+    //  @extend %clearfix;
+    @include clearfix;
+}
+
+//选择员工以及下拉日期
+.select-warp {
+    position: absolute;
+    display: none;
+    z-index: 300;
+    top: 40px;
+    left: 0;
+    padding: 2px;
+    min-width: 150px;
+    box-shadow: 0 0 5px rgba(0,0,0,.15);
+    background: #fff;
+}
+.index-select-box {
+    margin: 20px 0 28px;
+    //  @extend %clearfix;
+    @include clearfix;
+}
+.index-select {
+    position: relative;
+    float: left;
+    min-width: 150px;
+    line-height: 40px;
+    border-left: 1px solid #d4d4d4;
+    &:first-child {
+        border-left: 0;
+    }
+    &:hover {
+        .t-arrow {
+            background-image: url("../img/t-arrow-active.png");
+        }
+    }
+    &.active {
+        .select-warp {
+            display: block;
+        }
+        .t-arrow {
+            background-image: url("../img/t-arrow-active.png");
+        }
+    }
+}
+.select-show {
+    position: relative;
+    padding: 0 50px 0 32px;
+    cursor: pointer;
+    &.select-head {
+        padding-left: 70px;
+    }
+}
+
+.t-arrow {
+//  display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    width: 17px;
+    height: 17px;
+    background-image: url("../img/t-arrow.png");
+    @include icon;
+//  background-repeat: no-repeat;
+//  background-position: center;
+}
+
+.index-head {
+//  display: inline-block;
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    width: 48px;
+    height: 48px;
+//  background-repeat: no-repeat;
+//  background-position: center;
+@include icon;
+    &.head-manage {
+        background-image: url("../img/head-border.png");
+    }
+}
+.index-head-photo {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+//搜索员工
+.select-head-box {
+    min-width: 190px;
+}
+.search-head {
+    position: relative;
+    padding: 0 10px;
+    margin: 5px 0;
+    line-height: 0;
+}
+.search-c {
+    padding: 0 40px 0 10px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d4d4d4;
+    border-radius: 15px;
+}
+.search {
+    position: absolute;
+    display: inline-block;
+    top: 7px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    background: url("../img/search.png");
+}
+.head-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.head-li {
+    position: relative;
+    padding: 5px 5px 5px 70px;
+    height: $head-liH;
+    margin: 10px 0;
+    line-height: $head-liH - 10;
+    &:hover {
+        background: #f0f0f0;
+    }
+    .index-head {
+        top: 4px;
+    }
+    //  @extend %clearfix;
+    @include clearfix;
+    label {
+        float: left;
+    }
+    span {
+        float: left;
+        display: inline-block;
+        margin-left: 8px;
+        margin-top: ($head-liH - 30)/2;
+        padding: 0 10px;
+        line-height: 20px;
+        font-size: 12px;
+        border-radius: 10px;
+        background: #f6b47e;
+        color: #fff;
+    }
+}
+
+@import 'index.scss';
+
+.nav-right {
+    float: right;
+    //  @extend %clearfix;
+    @include clearfix;
+}
+.export {
+    //  float: left;
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    margin-right: 20px;
+    line-height: 40px;
+    i.icon-export {
+        //      display: inline-block;
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 17px;
+        height: 17px;
+        @include icon;
+        background-image: url("../img/export.png");
+
+    }
+}
+.drop-button {
+    display: inline-block;
+    position: relative;
+    padding-right: $drop-btnH;
+    min-width: 131px;
+    line-height: $drop-btnH;
+    border-radius: 3px;
+    color: #fff;
+    background: #50d2c2;
+}
+.drop-name {
+    display: block;
+    text-align: center;
+}
+.icon-drop-button {
+    position: absolute;
+    //  display: inline-block;
+    width: $drop-btnH;
+    height: $drop-btnH;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #35baaa;
+    background-image: url("../img/drop-btn.png");
+    //  background-position: center;
+    @include icon;
+    //  background-repeat: no-repeat;
+}
+@import 'customer.scss';
+
+//@import 'select.scss';
+//@import 'tags.scss';
+
+//设置内容占全屏
+.b-height {
+    position: relative;
+    height: 100%;
+    .b-panle {
+        position: relative;
+        height: 100%;
+    }
+    .table-warp {
+        position: absolute;
+        z-index: 3;
+        top: $header-h + 60;
+        bottom: $pageH;
+        left: $main-left;
+        right: $main-right;
+    }
+}

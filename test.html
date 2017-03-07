@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<link rel="stylesheet" href="css/monokai.css" />-->
+		<!--<link rel="stylesheet" href="css/echartsHome.css" />-->
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/echarts121211.js"></script>
+		<!--<script type="text/javascript" src="js/echarts.js" ></script>-->
+		<script type="text/javascript" src="js/macarons.js"></script>
+		<script type="text/javascript" src="js/jquery.select.js"></script>
+		<script type="text/javascript" src="js/jquery.tagsinput.min.js" ></script>
+
+	</head>
+
+	<body>
+		<!-- 头部  -->
+		<header class="b-header">
+			<div class="h-left">
+				<div class="logo">
+
+				</div>
+			</div>
+			<div class="h-right">
+				<div class="head">
+
+				</div>
+			</div>
+			<div class="h-main">
+				<ul class="h-menu">
+					<li class="h-menu-nav">首页</li>
+				</ul>
+			</div>
+		</header>
+		<!-- 左侧菜单 -->
+		<aside class="b-aside">
+			<div class="menu-warp">
+				<ul class="m-list">
+					<li class="m-nav">
+
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- 右侧主要内容 -->
+		<section class="b-main">
+			<div class="b-panel">
+				<div class="nav">
+					<span data-chart="0" class="active" onclick="changeCharts(this);">呼出电话量</span>
+					<span data-chart="1" onclick="changeCharts(this);">联系客户数</span>
+					<span data-chart="2" onclick="changeCharts(this);">通话时长</span>
+				</div>
+				<div>
+					<div class="charts" id="echarts" style="height: 800px;">
+						
+					</div>
+					<form id="form" name="form" onsubmit="return Fsubmit(this);">
+					<select class="Jselect" name="22123">
+						<option data-value="121">121</option>
+						<option  data-value="3232">3232</option>
+					</select>
+					<select class="Jselect" name="1231">
+						<option data-value="121">121</option>
+						<option  data-value="3232">3232</option>
+					</select>
+					<input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" />
+					<input type="text" name="123" id="" value="" />
+					<input type="submit" value="submiit" />
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- 弹层 -->
+		<section class="layer-warp">
+			<section class="layer-main">
+				
+			</section>
+		</section>
+		
+		<script type="text/javascript">
+			
+			function Fsubmit(obj){
+				console.log(document.getElementsByName("form"))
+				
+				return false;
+			}
+			
+			var option1;
+			var myCharts;
+			var chartXxis = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+			var chartData = [{
+				name: '蒸发量',
+				type: 'bar',
+				yAxisIndex: 0,
+				data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+			}, {
+				name: '降水量',
+				type: 'bar',
+				yAxisIndex: 0,
+				data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+			}, {
+				name: '平均温度',
+				type: 'bar',
+				yAxisIndex: 1,
+				data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+			}];
+
+			$(function() {
+				$('#tags_1').tagsInput({width:'auto'});
+				$(".Jselect").select();
+				option1 = {
+					tooltip: {
+						trigger: 'axis'
+					},
+					toolbox: {
+						show: true
+					},
+					legend: {
+						show: false,
+						data: []
+					},
+					xAxis: [{
+						type: 'category',
+						data: []
+					}],
+					yAxis: [{
+						type: 'value',
+						//						name: '水量',
+						splitArea: {
+							show: true,
+							areaStyle: {
+								color: [
+									'rgba(250,250,250,0.3)',
+									'rgba(200,200,200,0.3)'
+								]
+							}
+						},
+						axisLabel: {
+							formatter: '{value} ml'
+						}
+					}, {
+						type: 'value',
+						//						name: '温度',
+						splitArea: {
+							show: true,
+							areaStyle: {
+								color: [
+									'rgba(250,250,250,0.3)',
+									'rgba(200,200,200,0.3)'
+								]
+							}
+						},
+						axisLabel: {
+							formatter: '{value} °C'
+						}
+					}],
+					series: []
+				};
+
+				myCharts = echarts.init(document.getElementById("echarts"));
+				option1.xAxis[0].data = chartXxis;
+				//				for (var i =0;i<chartData.length;i++) {
+				option1.series.push(chartData[0]);
+				//				}
+				myCharts.setTheme(theme);
+				myCharts.setOption(option1);
+				window.onresize = myCharts.resize;
+			});
+
+			var chartData1;
+
+			function changeCharts(obj) {
+				if($(obj).hasClass("active")) {
+					$(obj).removeClass("active");
+				} else {
+					$(obj).addClass("active");
+				}
+				var active = $(".nav").find(".active");
+				chartData1 = [];
+				if(active.length > 0) {
+					for(var i = 0; i < active.length; i++) {
+						chartData1[i] = chartData[active[i].dataset.chart]
+					}
+					option1.xAxis[0].data = chartXxis;
+					option1.series = chartData1;
+					myCharts.clear();
+					myCharts.setOption(option1);
+				} else {
+					myCharts.clear();
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

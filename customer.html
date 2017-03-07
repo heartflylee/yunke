@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!--<link rel="stylesheet" href="css/jqwidgets.css" />-->
+		<!--<link rel="stylesheet" href="css/jqx.base.css" />-->
+		<link rel="stylesheet" href="css/jqxgrid.css" />
+		<!--<link rel="stylesheet" href="js/jqwidgets/styles/jqx.base.css" />-->
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<!-- 复选框 -->
+		<script type="text/javascript" src="js/icheck.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<!-- 顶部 -->
+		<script type="text/javascript" src="js/head.js"></script>
+		<!-- 左侧菜单 -->
+		<script type="text/javascript" src="js/menu.js"></script>
+		<!-- 图表插件 -->
+		<!--<script type="text/javascript" src="js/echarts.js"></script>-->
+		<!--<script type="text/javascript" src="js/macarons.js"></script>-->
+		<!--<script type="text/javascript" src="js/index.js"></script>-->
+		<!-- 日历插件 -->
+		<!--<script type="text/javascript" src="js/jqx/jqxcore.js"></script>-->
+		<!--<script type="text/javascript" src="js/jqx/jqxdatetimeinput.js"></script>-->
+		<!--<script type="text/javascript" src="js/jqx/jqxcalendar.js"></script>-->
+		<!--<script type="text/javascript" src="js/jqx/jqxtooltip.js"></script>-->
+		<!--<script type="text/javascript" src="js/jqx/globalize.js"></script>-->
+		<!--<script type="text/javascript" src="js/jqx/globalize.culture.ch-CN.js"></script>-->
+
+		<script type="text/javascript" src="js/jqx/jqxcore.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxdata.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxbuttons.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxscrollbar.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxmenu.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxgrid.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxgrid.sort.js"></script>
+		<!--<script type="text/javascript" src="js/jqwidgets/jqxgrid.filter.js"></script>-->
+		<script type="text/javascript" src="js/jqx/jqxgrid.selection.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxgrid.columnsresize.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxgrid.edit.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxgrid.pager.js"></script>
+		<!--<script type="text/javascript" src="js/jqx/jqxpanel.js"></script>-->
+		<script type="text/javascript" src="js/jqx/jqxcheckbox.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxlistbox.js"></script>
+		<script type="text/javascript" src="js/jqx/jqxdropdownlist.js"></script>
+		<!--<script type="text/javascript" src="js/scripts/demos.js"></script>-->
+
+		<!--[if lt IE 10]>
+	    <script type="text/javascript" src="js/html5shiv.js"></script>
+	    <script type="text/javascript" src="js/respond.min.js"></script>
+	    <script type="text/javascript" src="js/placeholder.js" ></script>
+	    <![endif]-->
+
+	</head>
+
+	<body>
+		<!-- 头部  -->
+		<header class="b-header">
+			<div class="h-right">
+				<div class="h-search">
+					<form onsubmit="return Hsearch();">
+						<div class="search-input-box">
+							<input type="text" class="search-input" placeholder="请输入姓名、公司、手机号等相关信息" />
+						</div>
+						<div class="search-btn-box">
+							<input type="submit" value="" class="search-btn" />
+						</div>
+					</form>
+				</div>
+				<div class="h-nav-box">
+					<div class="nav-li">
+						<a class="nav-href" href="javascript:void(0);">
+							<i class="nav-icon nav-service"></i>
+							<label class="nav-tip">在线客服</label>
+						</a>
+					</div>
+					<div class="nav-li">
+						<a class="nav-href" href="javascript:void(0);">
+							<label class="nav-num">555</label>
+							<i class="nav-icon nav-news"></i>
+							<label class="nav-tip">消息</label>
+						</a>
+
+					</div>
+					<div class="nav-li">
+						<a class="nav-href" id="help" href="javascript:void(0);">
+							<i class="nav-icon nav-help"></i>
+							<label class="nav-tip">帮助</label>
+						</a>
+						<div class="dropdown" id="help-drop">
+							<div class="dropli">
+								<i class="drop-icon drop-new"></i>
+								<label>新手引导</label>
+							</div>
+							<div class="dropli">
+								<i class="drop-icon drop-help"></i>
+								<label>帮助中心</label>
+							</div>
+							<div class="dropli">
+								<i class="drop-icon drop-video"></i>
+								<label>视频引导</label>
+							</div>
+							<div class="dropli">
+								<i class="drop-icon drop-return"></i>
+								<label>意见反馈</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="head">
+					<div class="head-photo" id="head-photo" style="background-image: url(img/head.png);">
+						<i></i>
+					</div>
+					<div class="dropdown" id="head-drop">
+						<div class="dropli">
+							<i class="drop-icon drop-down"></i>
+							<label>下载应用</label>
+						</div>
+						<div class="dropli">
+							<i class="drop-icon drop-out"></i>
+							<label>退出登录</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-main">
+				<div class="h-company">
+					北京蜜宝世纪科技有限公司
+				</div>
+			</div>
+		</header>
+		<!-- 左侧菜单 -->
+		<aside class="b-aside">
+			<div class="aside-head">
+				<div class="a-logo"></div>
+				<div class="menu-btn-box">
+					<i class="menu-btn menu-btn-defalut"></i>
+					<i class="menu-btn menu-btn-all"></i>
+				</div>
+			</div>
+			<div class="menu-warp">
+				<ul class="m-list">
+					<li class="m-nav">
+						<div class="nav-info">
+							<i class="icon icon-m1"></i>
+							<label>首页</label>
+							<i class="icon-sign"></i>
+						</div>
+						<ul class="m-second-list">
+							<li class="m-second">
+								<i></i>
+								<label>数据统计</label>
+							</li>
+							<li class="m-second">
+								<i></i>
+								<label>考勤统计</label>
+							</li>
+						</ul>
+					</li>
+					<li class="m-nav">
+						<div class="nav-info">
+							<i class="icon icon-m2"></i>
+							<label>客户</label>
+							<i class="icon-sign"></i>
+						</div>
+						<ul class="m-second-list">
+							<li class="m-second">
+								<i></i>
+								<label>客户</label>
+							</li>
+							<li class="m-second">
+								<i></i>
+								<label>联系人</label>
+							</li>
+						</ul>
+					</li>
+					<li class="m-nav">
+						<div class="nav-info">
+							<i class="icon icon-m3"></i>
+							<label>任务</label>
+							<i class="icon-sign"></i>
+						</div>
+					</li>
+					<li class="m-nav">
+						<div class="nav-info">
+							<i class="icon icon-m4"></i>
+							<label>设置</label>
+							<i class="icon-sign"></i>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="aside-footer">
+				让销售更简单
+			</div>
+		</aside>
+		<!-- 右侧主要内容 -->
+		<section class="b-main b-height">
+			<div class="b-panel">
+				<div class="small-nav-warp">
+					<div class="nav-box">
+						<div class="index-select">
+							<div class="select-show">
+								<label>全部客户</label>
+								<i class="t-arrow"></i>
+							</div>
+							<div class="select-warp">
+								<div class="date-select-box">
+									<ul>
+										<li class="date-select selected">
+											全部客户
+										</li>
+										<li class="date-select">
+											我负责的客户
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="nav-right">
+							<div class="export">
+								<i class="icon-export"></i> 导出
+							</div>
+							<div class="drop-button" onclick="layerShow('#customer')">
+								<label class="drop-name">新建客户</label>
+								<i class="icon-drop-button"></i>
+							</div>
+						</div>
+
+					</div>
+					<div class="table-setting">
+						<div class="table-nav-right">
+							<i class="close close-gray"></i>
+						</div>
+						<div class="table-nav-list">
+							<ul>
+								<li class="table-nav">
+									已选中<label class="count-select">1</label>项
+								</li>
+								<li class="table-nav">
+									<i class="table-icon icon-change"></i>
+									<div class="table-nav-main">变更负责人</div>
+								</li>
+								<li class="table-nav">
+									<i class="table-icon icon-delete"></i>
+									<div class="table-nav-main">删除</div>
+								</li>
+
+							</ul>
+						</div>
+
+					</div>
+				</div>
+				<div class="table-warp">
+					<div class="jqxtable" id="jqxtable"></div>
+				</div>
+			</div>
+
+		</section>
+
+		<div class="layer-detail-warp">
+			<div class="layer-detail active">
+				<div class="detail-h">
+					<div class="detail-title">
+						<div class="detail-h-r">
+							<div class="h-r-box">
+								<div class="h-r-li">
+									<div class="h-r-btn">
+										<i class="h-r-icon icon-edit"></i>
+										<label class="h-r-main">编辑</label>
+									</div>
+								</div>
+								<div class="h-r-li">
+									<div class="h-r-btn" onclick="layerShow('#customer')">
+										<i class="h-r-icon icon-add"></i>
+										<label class="h-r-main">添加联系人</label>
+									</div>
+								</div>
+								<div class="h-r-li">
+									<div class="h-r-btn " onclick="detailDrop(this,event);">
+										<i class="h-r-icon icon-menu"></i>
+									</div>
+									<div class="h-r-drop">
+										<div class="h-d-list">
+											<div class="h-d-li">
+												删除
+											</div>
+											<div class="h-d-li">
+												变更负责人
+											</div>
+											<div class="h-d-li">
+												锁定
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="detail-h-m">
+							<div class="h-m-company">
+								北京联云天下科技有限公司
+							</div>
+							<div class="qixin-btn">
+								<i></i> 工商信息
+							</div>
+						</div>
+					</div>
+					<div class="d-message">
+						<div class="d-m-li">
+							<div class="d-m-name">
+								客户负责人
+							</div>
+							<div class="d-m-main">
+								<i class="d-m-head" style="background-image: url(img/detail-head.png);"></i>
+								<label class="d-m-con">刘宇</label>
+							</div>
+						</div>
+						<div class="d-m-li">
+							<div class="d-m-name">
+								电话号码
+							</div>
+							<div class="d-m-main">
+								010-8888 8888
+							</div>
+						</div>
+						<div class="d-m-li">
+							<div class="d-m-name">
+								创建时间
+							</div>
+							<div class="d-m-main">
+								2017-02-27
+							</div>
+						</div>
+						<div class="d-m-li">
+							<div class="d-m-name">
+								最后联系时间
+							</div>
+							<div class="d-m-main">
+								2017-02-27
+							</div>
+						</div>
+						<div class="d-m-li">
+							<div class="d-m-name">
+								销售进度
+							</div>
+							<div class="d-m-main">
+								<label class="p-color0">初步沟通</label>
+								<!--<label class="p-color1">初步沟通</label>-->
+							</div>
+						</div>
+						<div class="d-m-li">
+							<div class="d-m-name">
+								最后一次沟通结果
+							</div>
+							<div class="d-m-main">
+								有意向-索要资料
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="detail-main">
+					<div class="detail-left">
+						<div class="tags">
+							<div class="tags-li active">
+								<a href="javascript:void(0)"onclick="tags(this)">相关</a>
+							</div>
+							<div class="tags-li">
+								<a href="javascript:void(0)" onclick="tags(this)">详细信息</a>
+							</div>
+						</div>
+						<div class="tags-main">
+							<div class="tags-con-li active">
+								<div class="list-li">
+									<div class="list-title">
+										<div class="title-right">
+											<div class="title-btn">
+												<i class="icon-t icon-t-arrow" onclick="detail(this)"></i>
+											</div>
+											<div class="title-btn">
+												<i class="icon-t icon-t-set" onclick="detailDrop(this,event)"></i>
+												<div class="h-r-drop">
+													<div class="h-d-list">
+														<div class="h-d-li">
+															删除
+														</div>
+														<div class="h-d-li">
+															变更跟进人
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="title-left">
+											<i class="title-icon icon-contact"></i> 联系人（2）
+										</div>
+									</div>
+									<div class="list-main">
+										<div class="list-table">
+											<ul class="table-row table-head">
+												<li class="table-li table-li1">
+													<input class="checkbox" type="checkbox" />
+												</li>
+												<li class="table-li table-li2">
+													客户姓名
+												</li>
+												<li class="table-li table-li3">
+													手机号
+												</li>
+												<li class="table-li table-li4">
+													跟进人
+												</li>
+												<li class="table-li table-li5">
+													最后一次沟通结果
+												</li>
+												<li class="table-li table-li6">
+													最后一次通话录音
+												</li>
+												<li class="table-li table-li7">
+													
+												</li>
+											</ul>
+											<ul class="table-row">
+												<li class="table-li table-li1">
+													<input class="checkbox" type="checkbox" />
+												</li>
+												<li class="table-li table-li2">
+													白又亮
+												</li>
+												<li class="table-li table-li3">
+													13910154169
+												</li>
+												<li class="table-li table-li4">
+													刘晓宇
+												</li>
+												<li class="table-li table-li5">
+													有意向-索要资料
+												</li>
+												<li class="table-li table-li6">
+													通话时长：1’ 11”
+												</li>
+												<li class="table-li table-li7">
+													<i class="video"></i>
+													<i class="download"></i>
+												</li>
+											</ul>
+											<ul class="table-row">
+												<li class="table-li table-li1">
+													<input class="checkbox" type="checkbox" />
+												</li>
+												<li class="table-li table-li2">
+													白又亮
+												</li>
+												<li class="table-li table-li3">
+													13910154169
+												</li>
+												<li class="table-li table-li4">
+													刘晓宇
+												</li>
+												<li class="table-li table-li5">
+													有意向-索要资料
+												</li>
+												<li class="table-li table-li6">
+													通话时长：1’ 11”
+												</li>
+												<li class="table-li table-li7">
+													<i class="video"></i>
+													<i class="download"></i>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="list-li">
+									<div class="list-title">
+										<div class="title-right">
+											<div class="title-btn">
+												<i class="icon-t icon-t-arrow" onclick="detail(this)"></i>
+											</div>
+											<div class="title-btn">
+												<i class="icon-t icon-t-upload"></i>
+											</div>
+										</div>
+										<div class="title-left">
+											<i class="title-icon icon-word"></i> 文档（2）
+										</div>
+									</div>
+									<div class="list-main">
+										<div class="word-list">
+											<div class="word-li">
+												<div class="word-t">
+													2月22日语术第一版.docx
+												</div>
+												<div class="word-titme">
+													上传时间：2017-02-22
+												</div>
+												<div class="word-author">
+													上传人：刘宇
+												</div>
+											</div>
+												<div class="word-li">
+												<div class="word-t">
+													2月22日语术第一版.docx
+												</div>
+												<div class="word-titme">
+													上传时间：2017-02-22
+												</div>
+												<div class="word-author">
+													上传人：刘宇
+												</div>
+											</div>
+												<div class="word-li">
+												<div class="word-t">
+													2月22日语术第一版.docx
+												</div>
+												<div class="word-titme">
+													上传时间：2017-02-22
+												</div>
+												<div class="word-author">
+													上传人：刘宇
+												</div>
+											</div>
+												<div class="word-li">
+												<div class="word-t">
+													2月22日语术第一版.docx
+												</div>
+												<div class="word-titme">
+													上传时间：2017-02-22
+												</div>
+												<div class="word-author">
+													上传人：刘宇
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list-li">
+									<div class="list-title">
+										<!--<div class="title-right">
+											<div class="title-btn">
+												<i class="icon-t icon-t-arrow"></i>
+											</div>
+											<div class="title-btn">
+												<i class="icon-t icon-t-upload"></i>
+											</div>
+										</div>-->
+										<div class="title-left">
+											<i class="title-icon icon-history"></i> 任务历史（2）
+										</div>
+									</div>
+									<div class="list-main">
+										<div class="list-table list-task">
+											<ul class="table-row table-head">
+												<li class="table-li">
+													任务名称
+												</li>
+												<li class="table-li">
+													人均电话量
+												</li>
+												<li class="table-li">
+													任务状态
+												</li>
+												<li class="table-li">
+													任务详情
+												</li>
+											</ul>
+											<ul class="table-row">
+												<li class="table-li table-color">
+													2月2日外呼任务
+												</li>
+												<li class="table-li">
+													200
+												</li>
+												<li class="table-li">
+													已完成
+												</li>
+												<li class="table-li">
+													<a href="javascript:void(0)">查看详情</a>
+												</li>
+											</ul>
+											<ul class="table-row">
+												<li class="table-li table-color">
+													2月2日外呼任务
+												</li>
+												<li class="table-li">
+													200
+												</li>
+												<li class="table-li">
+													已完成
+												</li>
+												<li class="table-li">
+													<a href="javascript:void(0)">查看详情</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tags-con-li">
+								<div class="message-box">
+									<div class="message-t">
+										基本信息
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											公司名称
+										</div>
+										<div class="message-main">
+											<input type="text" value="北京联云天下科技有限公司" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											客户负责人
+										</div>
+										<div class="message-main">
+											<input type="text" value="刘宇" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											销售进度
+										</div>
+										<div class="message-main">
+											<input type="text" value="初步沟通" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											所属行业
+										</div>
+										<div class="message-main">
+											<input type="text" value="IT-互联网" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											注册资金
+										</div>
+										<div class="message-main">
+											<input type="text" value="--" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											公司类型
+										</div>
+										<div class="message-main">
+											<input type="text" value="有限责任公司（自然人投资或控股）" />
+										</div>
+									</div>
+								</div>
+								<div class="message-box">
+									<div class="message-t">
+										联系信息
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											电话号码
+										</div>
+										<div class="message-main">
+											<input type="text" value="010-8888 8888" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											公司地址
+										</div>
+										<div class="message-main">
+											<input type="text" value="点击填写" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											公司地址
+										</div>
+										<div class="message-main">
+											<input type="text" value="北京市朝阳区建外soho西区12号楼2704室" />
+										</div>
+									</div>
+									<div class="message-li">
+										<div class="message-name">
+											邮政编码
+										</div>
+										<div class="message-main">
+											<input type="text" value="点击填写" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail-right">
+						<div class="tags">
+							<div class="tags-li active">
+								<a href="javascript:void(0)" onclick="tags(this)">时间轴</a>
+							</div>
+							<div class="tags-li">
+								<a href="javascript:void(0)" onclick="tags(this)">团队成员</a>
+							</div>
+						</div>
+						<div class="tags-main">
+							<div class="tags-con-li active">
+								<div class="note-form">
+									<form onsubmit="return false">
+										<textarea class="textarea" placeholder="请输入客户备注 "></textarea>
+										<div class="btn-right-box">
+											<input type="button" class="btn" value="取消" />
+											<input type="submit" class="btn" value="确定" />
+										</div>
+									</form>
+								</div>
+								<div class="time-line">
+									<div class="line-box">
+										<div class="line-time">2017-02-22 17:44</div>
+										<div class="line-main">
+											<div class="line-t">
+												<label class="color color-big">刘宇</label>
+												与
+												<label class="color">白又亮</label>
+												进行电话沟通
+											</div>
+											<div class="talk-time">
+												通话时长：1’ 11”<label class="video-box"><i class="icon video"></i> <i class="icon download"></i></label>
+											</div>
+											<div class="">
+												沟通结果：有意向-索要线索
+											</div>
+											<div class="">
+												电话备注：还行
+											</div>
+										</div>
+									</div>
+									<div class="line-box">
+										<div class="line-time">2017-02-22 17:44</div>
+										<div class="line-main">
+											<div class="line-t">
+												<label class="color color-big">刘宇</label>
+												给
+												<label class="color">白又亮</label>
+												发送挂机短信
+											</div>
+											<div>
+												短信模板：第一季度拉新短信模板
+											</div>
+											<div>
+												短信状态：<label class="color">打开链接</label>
+											</div>
+										</div>
+									</div>
+									<div class="line-box">
+										<div class="line-time">2017-02-22 17:44</div>
+										<div class="line-main">
+											<div class="line-t">
+												<label class="color color-big">刘宇</label>
+												创建了联系人
+												<label class="color">白又亮</label>
+											</div>
+										</div>
+									</div>
+									<div class="line-box">
+										<div class="line-time">2017-02-22 17:44</div>
+										<div class="line-main">
+											<div class="line-t">
+												<label class="color color-big">刘宇</label>
+												创建了客户
+												<a class="line-href" href="javascript:void(0)">北京蜜宝世纪科技有限公司</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tags-con-li">
+								<div class="member">
+									<div class="member-li">
+										<a href="javascript:void(0)" class="change-btn">
+											<i class="icon icon-change"></i>
+										</a>
+										<i class="member-head" style="background-image: url(img/detail-head.png);"></i>
+										<label class="color color-big">刘宇</label>
+										对接联系人
+										<label class="color">白又亮</label>
+									</div>
+									<div class="member-li">
+										<a href="javascript:void(0)" class="change-btn">
+											<i class="icon icon-change"></i>
+										</a>
+										<i class="member-head" style="background-image: url(img/detail-head.png);"></i>
+										<label class="color color-big">刘宇</label>
+										对接联系人
+										<label class="color">白又亮</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 新建客户 -->
+		<div class="layer-warp" id="customer">
+			<div class="layer-main">
+				<div class="layer-head">
+					新建客户
+					<div class="layer-close" onclick="layerClose('#customer')">
+						<i></i>
+					</div>
+				</div>
+				<div class="layer-info">
+					<div class="message">
+						<div class="m-row">
+							<div class="m-name">
+								公司名称
+							</div>
+							<div class="m-info m-input">
+								<input type="text" class="input" placeholder="请输入公司名称" />
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								联系人姓名
+							</div>
+							<div class="m-info m-input">
+								<input type="text" class="input" placeholder="请输入联系人姓名" />
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								联系人手机号
+							</div>
+							<div class="m-info m-input">
+								<input type="text" class="input" placeholder="请输入联系人手机号" />
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								公司地址
+							</div>
+							<div class="m-info m-input">
+								<input type="text" class="input" placeholder="请输入公司地址" />
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								公司类型
+							</div>
+							<div class="m-info m-input">
+								<input type="text" class="input" placeholder="请输入公司类型" />
+							</div>
+						</div>
+						<div class="m-row">
+							<div class="m-name">
+								备注
+							</div>
+							<div class="m-info m-input">
+								<textarea class="textarea" placeholder="请输入备注"></textarea>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="layer-footer">
+					<div class="right">
+						<a href="javascript:layerClose('#customer');" class="layer-close-btn">关闭</a>
+						<a href="javascript:void(0);" class="layer-btn">保存</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				var url = "js/jqx/data.json";
+				// prepare the data
+				var source = {
+					datatype: "json",
+					datafields: [
+						{ name: 'name', type: 'string' },
+						{ name: 'phone', type: 'string' },
+						{ name: 'major', type: 'string' },
+						{ name: 'progress', type: 'string' },
+						{ name: 'creatTime', type: 'string' },
+						{ name: 'contactTime', type: 'string' },
+						{ name: 'follow', type: 'string' },
+						{ name: 'company', type: 'string' },
+						{ name: 'address', type: 'string' },
+						{ name: 'lock', type: "int" }
+					],
+					id: 'id',
+					url: url
+				};
+				var dataAdapter = new $.jqx.dataAdapter(source);
+				var rows = [];
+				var cellbeginedit = function(row, datafield, columntype, value) {
+					if(rows.indexOf(row) >= 0) {
+						return false;
+					}
+				}
+
+				// create jqxgrid.
+				$("#jqxtable").jqxGrid({
+
+					width: '100%',
+					height: '100%',
+					source: dataAdapter,
+					columnsresize: true, //调整列的宽度
+					sortable: true, //排序
+					//              filterable: false,//筛选
+					//					scrollbarsize: 7, //设置滚动条大小
+					scrollmode: 'deferred',
+					altrows: true, //交替行，单数行和双数行不同
+					pageable: true, //分页
+					pagesize: 40, //每页显示行数
+					pagermode: 'simple', //分页样式
+
+					editable: true,
+					editmode: 'dblclick', //双击
+					selectionmode: 'checkbox', //选择框
+					rowsheight: 40, //行高
+					pagerheight: 50,
+					showsortmenuitems: !1,
+					ready: function() {
+						// called when the Grid is loaded. Call methods or set properties here.         
+					},
+
+					//              altrows: true,
+					columns: [{
+							text: '<img src="img/setting.png" />',
+							width: 20,
+							pinned: true,
+							sortable: !1,
+
+						},
+						{
+							text: '客户名称',
+							datafield: 'name',
+							width: 80,
+							pinned: true,
+							cellbeginedit: cellbeginedit,
+							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
+								if(rowData.lock == 1) {
+									if(rows.indexOf(row) < 0) {
+										rows.push(row);
+									}
+									return '<i class="icon-lock"></i><div class="jqx-grid-cell-left-align">' + value + '</div>';
+								}
+							}
+						},
+						{ text: '手机号码', datafield: 'phone', width: 120, pinned: true, cellbeginedit: cellbeginedit, },
+						{ text: '职位', datafield: 'major', width: 60, cellbeginedit: cellbeginedit, },
+						{ text: '销售进度', datafield: 'progress', width: 120, cellbeginedit: cellbeginedit, },
+						{ text: '创建时间', datafield: 'creatTime', minwidth: 120, cellbeginedit: cellbeginedit, },
+						{ text: '联系时间', datafield: 'contactTime', minwidth: 120, cellbeginedit: cellbeginedit, },
+						{ text: '跟进人', datafield: 'follow', minwidth: 120, cellbeginedit: cellbeginedit, },
+						{ text: '公司名称', datafield: 'company', minwidth: 120, cellbeginedit: cellbeginedit, },
+						{ text: '公司地址', datafield: 'address', minwidth: 120, cellbeginedit: cellbeginedit, }
+					]
+				});
+
+				$("#jqxtable").on('rowselect rowunselect', function(e) {
+					var rowindexes = $('#jqxtable').jqxGrid('getselectedrowindexes');
+					var setting = $(".table-setting");
+					if(rowindexes.length > 0) {
+						setting.fadeIn();
+					} else {
+						setting.fadeOut();
+					}
+					setting.find(".count-select").text(rowindexes.length);
+				});
+				
+				
+//				
+//				
+//				var urlContact=[];
+//				
+//				$.ajax({
+//					type:"get",
+//					url:"js/jqx/contact.json",
+//					async:true,
+//					success:function(data){
+//						console.log(data);
+//						urlContact=data;
+//					$("#list-warp").height(urlContact.length*40+33);
+////				= "js/jqx/contact.json";
+//				// prepare the data
+//				var sourceContact = {
+//					datatype: "json",
+//					datafields: [
+//						{ name: 'name', type: 'string' },
+//						{ name: 'phone', type: 'string' },
+//						{ name: 'follow', type: 'string' },
+//						{ name: 'lastReturn', type: 'string' },
+//						{ name: 'lastTime', type: 'int' },
+//						{ name: 'video', type: 'string' }
+//					],
+//					id: 'id',
+//					localdata: urlContact
+//				};
+//				console.log(sourceContact)
+//				var dataAdapterContact = new $.jqx.dataAdapter(sourceContact);
+////				var jqxHeight = dataAdapterContact.originaldata.length*40+30;
+//				$("#list-table").jqxGrid({
+//
+//					width: '99.9%',
+//					height: '100%',
+//					source: dataAdapterContact,
+//					columnsresize: false, //调整列的宽度
+//					sortable: false, //排序
+//					//              filterable: false,//筛选
+//					//					scrollbarsize: 7, //设置滚动条大小
+//					scrollmode: '',
+////					scroll:false,
+//					altrows: true, //交替行，单数行和双数行不同
+//					editable: false,
+//					editmode: 'dblclick', //双击
+//					selectionmode: 'checkbox', //选择框
+//					rowsheight: 40, //行高
+//					showsortmenuitems: !1,
+//					ready: function() {
+//						// called when the Grid is loaded. Call methods or set properties here.         
+//					},
+//
+//					//              altrows: true,
+//					columns: [{
+//							text: '客户名称',
+//							datafield: 'name',
+//							width: 80,
+//							pinned: true,
+//						},
+//						{ text: '手机号码', datafield: 'phone', width: 120, },
+//						{ text: '跟进人', datafield: 'follow', width: 80, },
+//						{ text: '最后一次通话结果', datafield: 'lastReturn', minwidth: 60, },
+//						{
+//							text: '最后一次通话录音',
+//							datafield: 'lastTime',
+//							width: 160,
+//							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
+//								var time = value + "’";
+//								if(value >= 60) {
+//									time = (value % 60 > 0) ? parseInt(value / 60) + "’ " + (value % 60) + "”" : parseInt(value / 60) + "’ ";
+//								}
+//								return '<i class=""></i><div class="jqx-grid-cell-left-align">最后通话时长：' + time + '</div>';
+//							}
+//						},
+//						{
+//							text: '',
+//							datafield: 'video',
+//							width: 50,
+//							cellsrenderer: function() {
+//								return '<i class="video"></i>';
+//							}
+//						},
+//						{
+//							text: '',
+//							datafield: 'download',
+//							width: 50,
+//							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
+//								return '<i class="download"></i>';
+//							}
+//						}
+//					]
+//				});
+//				}
+//				});
+				
+				
+			});
+
+			//
+			function detailDrop(obj, event) {
+				var $obj = $(obj).next(".h-r-drop");
+				if($obj.css("display") == "block") {
+					$obj.hide();
+					return false;
+				}
+				$obj.show();
+				$(document).one("click", function() {
+					$(".h-r-drop").hide();
+				});
+				event.stopPropagation();
+			}
+			$(function() {
+				$(".h-r-drop").click(function(event) {
+					event.stopPropagation();
+				})
+			});
+			
+			function detail(obj){
+				
+				var dMain = $(obj).parents(".list-title").next(".list-main");
+				if($(obj).hasClass("active")){
+					dMain.show();
+					$(obj).removeClass("active")
+				}else{
+					dMain.hide();
+					$(obj).addClass("active");
+				}
+			}
+			
+			function tags(obj){
+				var $obj  = $(obj);
+				var objli =$obj.parent(".tags-li");
+				if(objli.hasClass("active")){
+					return false;
+				}
+				var index = objli.index(".tags-li");
+				var tags = objli.parents(".tags");
+				var tagsMain =  tags.next();
+				var tagsShow= $(".tags-con-li:eq("+index+")");
+				tags.find(".tags-li").removeClass("active");
+				objli.addClass("active");
+				tagsMain.find(".tags-con-li").removeClass("active");
+				tagsShow.addClass("active");
+			}
+		</script>
+	</body>
+
+</html>

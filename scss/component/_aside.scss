@@ -1,0 +1,232 @@
+/*侧面菜单*/
+.b-aside {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: $aside-w;
+    background: #252834;
+    color: #fff;
+}
+.menu-warp {
+    position: absolute;
+    top: $header-h;
+    bottom: $menu-h;
+    left: 0;
+    width: 100%;
+    overflow-y: auto;
+}
+.aside-head {
+    height: $header-h;
+}
+.a-logo {
+    display: inline-block;
+    width: 120px;
+    height: 23px;
+    margin: ($header-h - 23)/2 0 0 30px;
+    background: url("../img/h-logo.png");
+    background-repeat: no-repeat;
+
+}
+.menu-btn-box {
+    position: absolute;
+    //  top: 32px;
+    top: ($header-h - 18)/2;
+    right: 26px;
+    cursor: pointer;
+}
+.menu-btn {
+    display: inline-block;
+    width: 21px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.menu-btn-all {
+    display: none;
+    background-image: url("../img/menu-btn-all.png");
+}
+.menu-btn-defalut {
+    background-image: url("../img/menu-btn.png");
+}
+.m-nav {
+    position: relative;
+}
+.m-second,
+.nav-info {
+    position: relative;
+    padding: 15px 20px 15px 93px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.nav-info {
+    font-size: 16px;
+    height: $menu-h;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 2px;
+    }
+    &.active,
+    &:hover,
+    .m-nav:hover & {
+        color: #50d2c2;
+        background: #20242e;
+        &:before {
+            background: #50d2c2;
+            @include backgroundChang(top,#50cdd2,#50d2c2);
+        }
+    }
+}
+.icon {
+//  display: inline-block;
+    position: absolute;
+    left: 40px;
+    top: ($menu-h - 22)/2;
+    //  top: 28px;
+    width: 22px;
+    height: 22px;
+//  background-position: center center;
+//  background-repeat: no-repeat;
+@include icon;
+}
+@for $i from 1 through 4 {
+    .icon-m#{$i} {
+        background-image: url("../img/icon-m#{$i}.png");
+        &.active {
+            background-image: url("../img/icon-m#{$i}-active.png");
+        }
+        .m-nav:hover &,
+        .nav-info.active &,
+        .nav-info:hover & {
+            background-image: url("../img/icon-m#{$i}-active.png");
+        }
+    }
+}
+
+.icon-sign {
+//  display: inline-block;
+    position: absolute;
+    top: ($menu-h - 24)/2;
+    //  top: 29px;
+    right: 23px;
+    width: 24px;
+    height: 24px;
+    @include icon;
+    background-image: url("../img/arrow.png");
+    .nav-info.active &,
+    .nav-info:hover & {
+        background-image: url("../img/arrow-active.png");
+        animation: arrow 0.2s ease-in both;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.m-second-list {
+    display: none;
+    background: #1e222b;
+    .nav-info.active + & {
+        display: block;
+    }
+}
+.m-second {
+    i {
+        display: inline-block;
+        position: absolute;
+        //      top: 35px;
+        top: ($menu-h - 10)/2;
+        left: 45px;
+        height: 10px;
+        width: 10px;
+        border: 2px solid #fff;
+        border-radius: 5px;
+    }
+    &.active,
+    &:hover {
+        background: #1c1f27;
+        i {
+            background: #fff;
+        }
+    }
+
+}
+
+.narrow {
+    .b-aside {
+        width: $aside-s-w;
+    }
+    .menu-warp {
+        bottom: 0;
+        overflow-y: inherit;
+
+    }
+    .a-logo {
+        display: none;
+    }
+    .menu-btn-all {
+        display: block;
+    }
+    .menu-btn-defalut {
+        display: none;
+    }
+    .nav-info {
+        padding: 0;
+        .icon {
+            left: 30px;
+        }
+        .icon-sign,
+        label {
+            display: none;
+        }
+
+    }
+    .m-nav {
+        .m-second-list {
+            display: none;
+        }
+        &:hover .m-second-list {
+            display: block;
+        }
+    }
+    .m-second-list {
+        position: absolute;
+        top: 0;
+        left: $aside-s-w;
+        width: 172px;
+        background: #1e222b;
+    }
+    .m-second {
+        padding-left: 67px;
+        i {
+            left: 28px;
+        }
+    }
+}
+
+.aside-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: $menu-h;
+    text-align: center;
+    color: #1c1f27;
+    font-size: 18px;
+    .narrow & {
+        display: none;
+    }
+}

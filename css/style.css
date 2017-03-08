@@ -517,6 +517,12 @@ a.line-href { text-decoration: underline; color: #39aea0; }
 .change-btn { float: right; display: inline-block; position: relative; width: 20px; height: 26px; }
 .change-btn .icon { top: 5px; left: 0; }
 
+.list-warp { *zoom: 1; }
+.list-warp:after, .list-warp:before { content: ""; display: table; font: 0/0 a; }
+.list-warp:after { clear: both; }
+
+.list-left, .list-right { display: inline-block; width: 243px; }
+
 .b-height { position: relative; height: 100%; }
 .b-height .b-panle { position: relative; height: 100%; }
 .b-height .table-warp { position: absolute; z-index: 3; top: 120px; bottom: 0; left: 20px; right: 20px; }

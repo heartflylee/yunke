@@ -263,7 +263,7 @@
 		</section>
 
 		<div class="layer-detail-warp">
-			<div class="layer-detail active">
+			<div class="layer-detail">
 				<div class="detail-h">
 					<div class="detail-title">
 						<div class="detail-h-r">
@@ -366,7 +366,7 @@
 					<div class="detail-left">
 						<div class="tags">
 							<div class="tags-li active">
-								<a href="javascript:void(0)"onclick="tags(this)">相关</a>
+								<a href="javascript:void(0)" onclick="tags(this)">相关</a>
 							</div>
 							<div class="tags-li">
 								<a href="javascript:void(0)" onclick="tags(this)">详细信息</a>
@@ -420,7 +420,7 @@
 													最后一次通话录音
 												</li>
 												<li class="table-li table-li7">
-													
+
 												</li>
 											</ul>
 											<ul class="table-row">
@@ -501,7 +501,7 @@
 													上传人：刘宇
 												</div>
 											</div>
-												<div class="word-li">
+											<div class="word-li">
 												<div class="word-t">
 													2月22日语术第一版.docx
 												</div>
@@ -512,7 +512,7 @@
 													上传人：刘宇
 												</div>
 											</div>
-												<div class="word-li">
+											<div class="word-li">
 												<div class="word-t">
 													2月22日语术第一版.docx
 												</div>
@@ -523,7 +523,7 @@
 													上传人：刘宇
 												</div>
 											</div>
-												<div class="word-li">
+											<div class="word-li">
 												<div class="word-t">
 													2月22日语术第一版.docx
 												</div>
@@ -718,10 +718,8 @@
 										<div class="line-time">2017-02-22 17:44</div>
 										<div class="line-main">
 											<div class="line-t">
-												<label class="color color-big">刘宇</label>
-												与
-												<label class="color">白又亮</label>
-												进行电话沟通
+												<label class="color color-big">刘宇</label> 与
+												<label class="color">白又亮</label> 进行电话沟通
 											</div>
 											<div class="talk-time">
 												通话时长：1’ 11”<label class="video-box"><i class="icon video"></i> <i class="icon download"></i></label>
@@ -738,10 +736,8 @@
 										<div class="line-time">2017-02-22 17:44</div>
 										<div class="line-main">
 											<div class="line-t">
-												<label class="color color-big">刘宇</label>
-												给
-												<label class="color">白又亮</label>
-												发送挂机短信
+												<label class="color color-big">刘宇</label> 给
+												<label class="color">白又亮</label> 发送挂机短信
 											</div>
 											<div>
 												短信模板：第一季度拉新短信模板
@@ -755,8 +751,7 @@
 										<div class="line-time">2017-02-22 17:44</div>
 										<div class="line-main">
 											<div class="line-t">
-												<label class="color color-big">刘宇</label>
-												创建了联系人
+												<label class="color color-big">刘宇</label> 创建了联系人
 												<label class="color">白又亮</label>
 											</div>
 										</div>
@@ -765,8 +760,7 @@
 										<div class="line-time">2017-02-22 17:44</div>
 										<div class="line-main">
 											<div class="line-t">
-												<label class="color color-big">刘宇</label>
-												创建了客户
+												<label class="color color-big">刘宇</label> 创建了客户
 												<a class="line-href" href="javascript:void(0)">北京蜜宝世纪科技有限公司</a>
 											</div>
 										</div>
@@ -780,8 +774,7 @@
 											<i class="icon icon-change"></i>
 										</a>
 										<i class="member-head" style="background-image: url(img/detail-head.png);"></i>
-										<label class="color color-big">刘宇</label>
-										对接联系人
+										<label class="color color-big">刘宇</label> 对接联系人
 										<label class="color">白又亮</label>
 									</div>
 									<div class="member-li">
@@ -789,8 +782,7 @@
 											<i class="icon icon-change"></i>
 										</a>
 										<i class="member-head" style="background-image: url(img/detail-head.png);"></i>
-										<label class="color color-big">刘宇</label>
-										对接联系人
+										<label class="color color-big">刘宇</label> 对接联系人
 										<label class="color">白又亮</label>
 									</div>
 								</div>
@@ -800,7 +792,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- 新建客户 -->
 		<div class="layer-warp" id="customer">
 			<div class="layer-main">
@@ -860,7 +852,7 @@
 								<textarea class="textarea" placeholder="请输入备注"></textarea>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 				<div class="layer-footer">
@@ -871,7 +863,47 @@
 				</div>
 			</div>
 		</div>
-		
+		<!-- 自定义表头 -->
+		<div class="layer-warp" id="customHead">
+			<div class="layer-main">
+				<div class="layer-head">
+					编辑显示字段
+					<div class="layer-close" onclick="layerClose('#custoHead')">
+						<i></i>
+					</div>
+				</div>
+				<div class="layer-info">
+					<div class="list-warp">
+						<div class="list-left">
+							<select id="select-left" multiple="multiple" style="display: none;">
+								<option value="name">客户姓名</option>
+								<option value="phone">手机号码</option>
+								<option value="major">职位</option>
+								<option value="progress">销售进度</option>
+								<option value="creatTime">创建时间</option>
+								<option value="contactTime">联系时间</option>
+								<option value="follow">跟进人</option>
+								<option value="company">公司名称</option>
+								<option value="address">公司地址</option>
+							</select>
+							<div id="list-left"></div>
+						</div>
+						<div class="list-right">
+							<select id="select-right" multiple="multiple" style="display: none;">
+								
+							</select>
+							<div id="list-right"></div>
+						</div>
+					</div>
+				</div>
+				<div class="layer-footer">
+					<div class="right">
+						<a href="javascript:layerClose('#customHead');" class="layer-close-btn">关闭</a>
+						<a href="javascript:void(0);" class="layer-btn">保存</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script type="text/javascript">
 			$(document).ready(function() {
 
@@ -880,6 +912,7 @@
 				var source = {
 					datatype: "json",
 					datafields: [
+						{ name: 'id', type: 'string' },
 						{ name: 'name', type: 'string' },
 						{ name: 'phone', type: 'string' },
 						{ name: 'major', type: 'string' },
@@ -897,6 +930,7 @@
 				var dataAdapter = new $.jqx.dataAdapter(source);
 				var rows = [];
 				var cellbeginedit = function(row, datafield, columntype, value) {
+					console.log(row);
 					if(rows.indexOf(row) >= 0) {
 						return false;
 					}
@@ -934,7 +968,11 @@
 							width: 20,
 							pinned: true,
 							sortable: !1,
-
+							//							columnclick: function(event) {
+							//								console.log(event);
+							//								//					CustomHead();
+							//								return false;
+							//							}
 						},
 						{
 							text: '客户名称',
@@ -942,14 +980,33 @@
 							width: 80,
 							pinned: true,
 							cellbeginedit: cellbeginedit,
+
+							createwidget: function(row, column, value, htmlElement) {
+								var button = $(value);
+								$(htmlElement).append(button);
+								button.click(function(event) {
+									console.log(event);
+									console.log(event.target.dataset.id);
+									//显示客户详情
+									customerShow();
+
+								});
+							},
+							initwidget: function(row, column, value, htmlElement) {
+								//								console.log(value);
+								//								console.log(htmlElement);
+								//								$(htmlElement).innerHTML = '<i class="icon-lock"></i><div class="jqx-grid-cell-left-align">' + value + '</div>';
+							},
 							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
 								if(rowData.lock == 1) {
 									if(rows.indexOf(row) < 0) {
 										rows.push(row);
 									}
-									return '<i class="icon-lock"></i><div class="jqx-grid-cell-left-align">' + value + '</div>';
+									return '<i class="icon-lock" data-id="' + rowData.id + '"></i><div class="jqx-grid-cell-left-align" data-id="' + rowData.id + '">' + value + '</div>';
 								}
-							}
+								return '<i class="" data-id="' + rowData.id + '"></i><div class="jqx-grid-cell-left-align" data-id="' + rowData.id + '">' + value + '</div>';
+							},
+
 						},
 						{ text: '手机号码', datafield: 'phone', width: 120, pinned: true, cellbeginedit: cellbeginedit, },
 						{ text: '职位', datafield: 'major', width: 60, cellbeginedit: cellbeginedit, },
@@ -972,103 +1029,37 @@
 					}
 					setting.find(".count-select").text(rowindexes.length);
 				});
+				//显示自定义表头
+				$('#jqxtable').on('columnclick', function(event) {
+					console.log(event);
+					console.log(event.args)
+					if(event.args.datafield == null) {
+						CustomHead();
+					}
+				});
+
+				//自定义表头
+				$("#list-left").jqxListBox({ width: 200, height: 250, multiple: true, });
+				$("#list-left").jqxListBox('loadFromSelect', 'select-left');
+				 var selectLeft = function () {
+                    var items = $("#list-left").jqxListBox('getSelectedItems');
+                    console.log(items);
+                }
+                selectLeft();
+				$("#list-left").on('change', function(event) {
+					selectLeft();
+				});
 				
-				
-//				
-//				
-//				var urlContact=[];
-//				
-//				$.ajax({
-//					type:"get",
-//					url:"js/jqx/contact.json",
-//					async:true,
-//					success:function(data){
-//						console.log(data);
-//						urlContact=data;
-//					$("#list-warp").height(urlContact.length*40+33);
-////				= "js/jqx/contact.json";
-//				// prepare the data
-//				var sourceContact = {
-//					datatype: "json",
-//					datafields: [
-//						{ name: 'name', type: 'string' },
-//						{ name: 'phone', type: 'string' },
-//						{ name: 'follow', type: 'string' },
-//						{ name: 'lastReturn', type: 'string' },
-//						{ name: 'lastTime', type: 'int' },
-//						{ name: 'video', type: 'string' }
-//					],
-//					id: 'id',
-//					localdata: urlContact
-//				};
-//				console.log(sourceContact)
-//				var dataAdapterContact = new $.jqx.dataAdapter(sourceContact);
-////				var jqxHeight = dataAdapterContact.originaldata.length*40+30;
-//				$("#list-table").jqxGrid({
-//
-//					width: '99.9%',
-//					height: '100%',
-//					source: dataAdapterContact,
-//					columnsresize: false, //调整列的宽度
-//					sortable: false, //排序
-//					//              filterable: false,//筛选
-//					//					scrollbarsize: 7, //设置滚动条大小
-//					scrollmode: '',
-////					scroll:false,
-//					altrows: true, //交替行，单数行和双数行不同
-//					editable: false,
-//					editmode: 'dblclick', //双击
-//					selectionmode: 'checkbox', //选择框
-//					rowsheight: 40, //行高
-//					showsortmenuitems: !1,
-//					ready: function() {
-//						// called when the Grid is loaded. Call methods or set properties here.         
-//					},
-//
-//					//              altrows: true,
-//					columns: [{
-//							text: '客户名称',
-//							datafield: 'name',
-//							width: 80,
-//							pinned: true,
-//						},
-//						{ text: '手机号码', datafield: 'phone', width: 120, },
-//						{ text: '跟进人', datafield: 'follow', width: 80, },
-//						{ text: '最后一次通话结果', datafield: 'lastReturn', minwidth: 60, },
-//						{
-//							text: '最后一次通话录音',
-//							datafield: 'lastTime',
-//							width: 160,
-//							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
-//								var time = value + "’";
-//								if(value >= 60) {
-//									time = (value % 60 > 0) ? parseInt(value / 60) + "’ " + (value % 60) + "”" : parseInt(value / 60) + "’ ";
-//								}
-//								return '<i class=""></i><div class="jqx-grid-cell-left-align">最后通话时长：' + time + '</div>';
-//							}
-//						},
-//						{
-//							text: '',
-//							datafield: 'video',
-//							width: 50,
-//							cellsrenderer: function() {
-//								return '<i class="video"></i>';
-//							}
-//						},
-//						{
-//							text: '',
-//							datafield: 'download',
-//							width: 50,
-//							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
-//								return '<i class="download"></i>';
-//							}
-//						}
-//					]
-//				});
-//				}
-//				});
-				
-				
+				$("#list-right").jqxListBox({ width: 200, height: 250, multiple: true, });
+				$("#list-right").jqxListBox('loadFromSelect', 'select-right');
+				 var selectRight = function () {
+                    var items = $("#list-right").jqxListBox('getSelectedItems');
+                    console.log(items);
+                }
+                selectRight();
+				$("#list-right").on('change', function(event) {
+					selectRight();
+				});
 			});
 
 			//
@@ -1089,29 +1080,28 @@
 					event.stopPropagation();
 				})
 			});
-			
-			function detail(obj){
-				
+
+			function detail(obj) {
 				var dMain = $(obj).parents(".list-title").next(".list-main");
-				if($(obj).hasClass("active")){
+				if($(obj).hasClass("active")) {
 					dMain.show();
 					$(obj).removeClass("active")
-				}else{
+				} else {
 					dMain.hide();
 					$(obj).addClass("active");
 				}
 			}
-			
-			function tags(obj){
-				var $obj  = $(obj);
-				var objli =$obj.parent(".tags-li");
-				if(objli.hasClass("active")){
+
+			function tags(obj) {
+				var $obj = $(obj);
+				var objli = $obj.parent(".tags-li");
+				if(objli.hasClass("active")) {
 					return false;
 				}
 				var index = objli.index(".tags-li");
 				var tags = objli.parents(".tags");
-				var tagsMain =  tags.next();
-				var tagsShow= $(".tags-con-li:eq("+index+")");
+				var tagsMain = tags.next();
+				var tagsShow = $(".tags-con-li:eq(" + index + ")");
 				tags.find(".tags-li").removeClass("active");
 				objli.addClass("active");
 				tagsMain.find(".tags-con-li").removeClass("active");

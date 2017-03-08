@@ -13,7 +13,24 @@ function layerShow(id){
 function layerClose(id){
 	$(id).removeClass("active");
 }
+//显示客户详情
+function customerShow(){
+	$(".layer-detail-warp").addClass("active");
+}
+$(function(){
+	$(".layer-detail-warp").click(function(event){
+		$(this).removeClass("active");
+	});
+	$(".layer-detail").click(function(event){
+		event.stopPropagation();
+	})
+});
 
+//自定义表头
+function CustomHead(){
+	console.log("自定义表头");
+	layerShow("#customHead");
+}
 
 //改变窗口大小
 $(window).resize(function() {

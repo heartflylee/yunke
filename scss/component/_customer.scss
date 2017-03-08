@@ -80,9 +80,6 @@
     background-image: url("../img/close-gray.png");
 }
 
-
-
-
 //客户详情弹层
 .detail-h {
     padding: 20px 30px;
@@ -586,5 +583,13 @@ a.line-href {
     }
 }
 
+//自定义表头
+.list-warp {
+    @include clearfix;
+}
 
-
+.list-left,
+.list-right {
+    display: inline-block;
+    width: 243px;
+}

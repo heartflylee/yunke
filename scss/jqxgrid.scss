@@ -2288,7 +2288,10 @@ of the horizontal scrollbar.*/
     margin: 0;
     padding: 0;
     border: 1px solid transparent;
-}
+// border:none !important ;
+// width:0 !important;
+//height: 0 !important;
+   }
 /*applied to the scrollbar buttons in hovered state.*/
 .jqx-scrollbar-button-state-hover {
     margin: 0;

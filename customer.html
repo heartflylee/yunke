@@ -19,6 +19,7 @@
 		<script type="text/javascript" src="js/head.js"></script>
 		<!-- 左侧菜单 -->
 		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/customer.js"></script>
 		<!-- 图表插件 -->
 		<!--<script type="text/javascript" src="js/echarts.js"></script>-->
 		<!--<script type="text/javascript" src="js/macarons.js"></script>-->
@@ -868,38 +869,38 @@
 			<div class="layer-main">
 				<div class="layer-head">
 					编辑显示字段
-					<div class="layer-close" onclick="layerClose('#custoHead')">
+					<div class="layer-close" onclick="layerClose('#customHead')">
 						<i></i>
 					</div>
 				</div>
 				<div class="layer-info">
 					<div class="list-warp">
 						<div class="list-left">
-							<select id="select-left" multiple="multiple" style="display: none;">
-								<option value="name">客户姓名</option>
-								<option value="phone">手机号码</option>
-								<option value="major">职位</option>
-								<option value="progress">销售进度</option>
-								<option value="creatTime">创建时间</option>
-								<option value="contactTime">联系时间</option>
-								<option value="follow">跟进人</option>
-								<option value="company">公司名称</option>
-								<option value="address">公司地址</option>
-							</select>
+							<div class="list-t">
+								隐藏字段
+							</div>
 							<div id="list-left"></div>
 						</div>
+						<div class="move-list">
+							<a href="javascript:listMove(0);"><i class="icon-list icon-list-left"></i></a>
+							<a href="javascript:listMove(1);"><i class="icon-list icon-list-right"></i></a>
+						</div>
 						<div class="list-right">
-							<select id="select-right" multiple="multiple" style="display: none;">
-								
-							</select>
+							<div class="list-t">
+								显示字段
+							</div>
 							<div id="list-right"></div>
+						</div>
+						<div class="move-list">
+							<a href="javascript:listMove(2);"><i class="icon-list icon-list-up"></i></a>
+							<a href="javascript:listMove(3);"><i class="icon-list icon-list-down"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="layer-footer">
 					<div class="right">
 						<a href="javascript:layerClose('#customHead');" class="layer-close-btn">关闭</a>
-						<a href="javascript:void(0);" class="layer-btn">保存</a>
+						<a href="javascript:customSubmit();" class="layer-btn">保存</a>
 					</div>
 				</div>
 			</div>
@@ -908,7 +909,6 @@
 			$(document).ready(function() {
 
 				var url = "js/jqx/data.json";
-				// prepare the data
 				var source = {
 					datatype: "json",
 					datafields: [
@@ -938,41 +938,28 @@
 
 				// create jqxgrid.
 				$("#jqxtable").jqxGrid({
-
 					width: '100%',
 					height: '100%',
 					source: dataAdapter,
 					columnsresize: true, //调整列的宽度
 					sortable: true, //排序
-					//              filterable: false,//筛选
-					//					scrollbarsize: 7, //设置滚动条大小
-					scrollmode: 'deferred',
+					//					scrollmode: 'deferred',
 					altrows: true, //交替行，单数行和双数行不同
 					pageable: true, //分页
 					pagesize: 40, //每页显示行数
 					pagermode: 'simple', //分页样式
-
 					editable: true,
 					editmode: 'dblclick', //双击
 					selectionmode: 'checkbox', //选择框
 					rowsheight: 40, //行高
 					pagerheight: 50,
 					showsortmenuitems: !1,
-					ready: function() {
-						// called when the Grid is loaded. Call methods or set properties here.         
-					},
-
-					//              altrows: true,
+					ready: function() {},
 					columns: [{
 							text: '<img src="img/setting.png" />',
 							width: 20,
 							pinned: true,
 							sortable: !1,
-							//							columnclick: function(event) {
-							//								console.log(event);
-							//								//					CustomHead();
-							//								return false;
-							//							}
 						},
 						{
 							text: '客户名称',
@@ -980,7 +967,6 @@
 							width: 80,
 							pinned: true,
 							cellbeginedit: cellbeginedit,
-
 							createwidget: function(row, column, value, htmlElement) {
 								var button = $(value);
 								$(htmlElement).append(button);
@@ -989,14 +975,9 @@
 									console.log(event.target.dataset.id);
 									//显示客户详情
 									customerShow();
-
 								});
 							},
-							initwidget: function(row, column, value, htmlElement) {
-								//								console.log(value);
-								//								console.log(htmlElement);
-								//								$(htmlElement).innerHTML = '<i class="icon-lock"></i><div class="jqx-grid-cell-left-align">' + value + '</div>';
-							},
+							initwidget: function(row, column, value, htmlElement) {},
 							cellsrenderer: function(row, column, value, defaultHtml, style, rowData) {
 								if(rowData.lock == 1) {
 									if(rows.indexOf(row) < 0) {
@@ -1006,7 +987,6 @@
 								}
 								return '<i class="" data-id="' + rowData.id + '"></i><div class="jqx-grid-cell-left-align" data-id="' + rowData.id + '">' + value + '</div>';
 							},
-
 						},
 						{ text: '手机号码', datafield: 'phone', width: 120, pinned: true, cellbeginedit: cellbeginedit, },
 						{ text: '职位', datafield: 'major', width: 60, cellbeginedit: cellbeginedit, },
@@ -1015,10 +995,11 @@
 						{ text: '联系时间', datafield: 'contactTime', minwidth: 120, cellbeginedit: cellbeginedit, },
 						{ text: '跟进人', datafield: 'follow', minwidth: 120, cellbeginedit: cellbeginedit, },
 						{ text: '公司名称', datafield: 'company', minwidth: 120, cellbeginedit: cellbeginedit, },
-						{ text: '公司地址', datafield: 'address', minwidth: 120, cellbeginedit: cellbeginedit, }
+						{ text: '公司地址', datafield: 'address', minwidth: 120, cellbeginedit: cellbeginedit, },
 					]
 				});
 
+				//表格内复选框
 				$("#jqxtable").on('rowselect rowunselect', function(e) {
 					var rowindexes = $('#jqxtable').jqxGrid('getselectedrowindexes');
 					var setting = $(".table-setting");
@@ -1037,32 +1018,9 @@
 						CustomHead();
 					}
 				});
-
-				//自定义表头
-				$("#list-left").jqxListBox({ width: 200, height: 250, multiple: true, });
-				$("#list-left").jqxListBox('loadFromSelect', 'select-left');
-				 var selectLeft = function () {
-                    var items = $("#list-left").jqxListBox('getSelectedItems');
-                    console.log(items);
-                }
-                selectLeft();
-				$("#list-left").on('change', function(event) {
-					selectLeft();
-				});
-				
-				$("#list-right").jqxListBox({ width: 200, height: 250, multiple: true, });
-				$("#list-right").jqxListBox('loadFromSelect', 'select-right');
-				 var selectRight = function () {
-                    var items = $("#list-right").jqxListBox('getSelectedItems');
-                    console.log(items);
-                }
-                selectRight();
-				$("#list-right").on('change', function(event) {
-					selectRight();
-				});
 			});
 
-			//
+			//详情内下拉
 			function detailDrop(obj, event) {
 				var $obj = $(obj).next(".h-r-drop");
 				if($obj.css("display") == "block") {
@@ -1080,33 +1038,6 @@
 					event.stopPropagation();
 				})
 			});
-
-			function detail(obj) {
-				var dMain = $(obj).parents(".list-title").next(".list-main");
-				if($(obj).hasClass("active")) {
-					dMain.show();
-					$(obj).removeClass("active")
-				} else {
-					dMain.hide();
-					$(obj).addClass("active");
-				}
-			}
-
-			function tags(obj) {
-				var $obj = $(obj);
-				var objli = $obj.parent(".tags-li");
-				if(objli.hasClass("active")) {
-					return false;
-				}
-				var index = objli.index(".tags-li");
-				var tags = objli.parents(".tags");
-				var tagsMain = tags.next();
-				var tagsShow = $(".tags-con-li:eq(" + index + ")");
-				tags.find(".tags-li").removeClass("active");
-				objli.addClass("active");
-				tagsMain.find(".tags-con-li").removeClass("active");
-				tagsShow.addClass("active");
-			}
 		</script>
 	</body>
 

@@ -1,35 +1,17 @@
 //设置弹框高度
 function layerHeight() {
-//	var layerH = $(window).innerHeight() - $(".layer-head").innerHeight() - $(".layer-footer").innerHeight() - 5;
+	//	var layerH = $(window).innerHeight() - $(".layer-head").innerHeight() - $(".layer-footer").innerHeight() - 5;
 	var layerH = $(window).innerHeight() - 145;
 	$(".layer-info").css("max-height", layerH);
 }
 
 //弹出框显示
-function layerShow(id){
+function layerShow(id) {
 	$(id).addClass("active");
 }
 //关闭弹出框
-function layerClose(id){
+function layerClose(id) {
 	$(id).removeClass("active");
-}
-//显示客户详情
-function customerShow(){
-	$(".layer-detail-warp").addClass("active");
-}
-$(function(){
-	$(".layer-detail-warp").click(function(event){
-		$(this).removeClass("active");
-	});
-	$(".layer-detail").click(function(event){
-		event.stopPropagation();
-	})
-});
-
-//自定义表头
-function CustomHead(){
-	console.log("自定义表头");
-	layerShow("#customHead");
 }
 
 //改变窗口大小
@@ -45,8 +27,7 @@ $(function() {
 		radioClass: 'iradio-warp',
 		increaseArea: '20%'
 	});
-	
-	
+
 	//下拉
 	$(".select-show").click(function(event) {
 		var selectBox = $(this).parent(".index-select");
@@ -60,9 +41,8 @@ $(function() {
 			event.stopPropagation();
 		}
 	});
-	$(".index-select").click(function(event){
+	$(".index-select").click(function(event) {
 		event.stopPropagation();
 	});
-	
-	
+
 });

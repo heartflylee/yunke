@@ -517,11 +517,28 @@ a.line-href { text-decoration: underline; color: #39aea0; }
 .change-btn { float: right; display: inline-block; position: relative; width: 20px; height: 26px; }
 .change-btn .icon { top: 5px; left: 0; }
 
-.list-warp { *zoom: 1; }
+.list-warp { *zoom: 1; padding: 20px 40px; }
 .list-warp:after, .list-warp:before { content: ""; display: table; font: 0/0 a; }
 .list-warp:after { clear: both; }
+.list-warp .select { display: none; }
 
-.list-left, .list-right { display: inline-block; width: 243px; }
+.list-left, .list-right { display: inline-block; width: 200px; }
+
+.list-t { margin-bottom: 10px; color: #999; }
+
+.move-list { display: inline-block; position: relative; height: 335px; margin: 0 15px; }
+
+.icon-list { display: block; width: 24px; height: 24px; margin-bottom: 10px; background-position: center; background-repeat: no-repeat; background-size: contain; }
+
+.icon-list-left { background-image: url(../img/list-left.png); }
+
+.icon-list-right { background-image: url(../img/list-right.png); }
+
+.icon-list-up { background-image: url(../img/list-up.png); }
+
+.icon-list-down { background-image: url(../img/list-down.png); }
+
+.icon-list-left { margin: 130px 0 20px; }
 
 .b-height { position: relative; height: 100%; }
 .b-height .b-panle { position: relative; height: 100%; }

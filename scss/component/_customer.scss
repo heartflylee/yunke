@@ -586,10 +586,43 @@ a.line-href {
 //自定义表头
 .list-warp {
     @include clearfix;
+    padding: 20px 40px;
+    .select{
+        display: none;
+    }
 }
 
 .list-left,
 .list-right {
     display: inline-block;
-    width: 243px;
+    width: 200px;
+}
+.list-t{
+    margin-bottom: 10px;
+    color: #999;
+}
+.move-list{
+    display: inline-block;
+    position: relative;
+    height: 335px;
+    margin:0 15px;
+}
+
+.icon-list{
+    display: block;
+    width:24px;
+    height: 24px;
+    margin-bottom: 10px;
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+$listicon:list-left list-right list-up list-down;
+@for $i from 1 through 4{
+    .icon-#{nth($listicon,$i)}{
+        background-image: url(../img/#{nth($listicon,$i)}.png);
+    }
+}
+.icon-list-left{
+    margin: 130px 0 20px;
 }

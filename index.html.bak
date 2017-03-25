@@ -29,6 +29,7 @@
 		<script type="text/javascript" src="js/jqx/jqxtooltip.js"></script>
 		<script type="text/javascript" src="js/jqx/globalize.js"></script>
 		<script type="text/javascript" src="js/jqx/globalize.culture.ch-CN.js"></script>
+
 		<!--[if lt IE 10]>
 	    <script type="text/javascript" src="js/html5shiv.js"></script>
 	    <script type="text/javascript" src="js/respond.min.js"></script>
